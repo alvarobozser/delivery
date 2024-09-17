@@ -16,6 +16,7 @@ const usersRoutes = require('./routes/userRoutes');
 const categoriesRoutes = require('./routes/categoriesRoutes');
 const productRoutes  = require('./routes/productRoutes');
 const addressRoutes = require('./routes/addressRoutes');
+const ordersRoutes = require('./routes/orderRoutes');
 
 const port = process.env.PORT || 3000;
 
@@ -45,8 +46,9 @@ usersRoutes(app,upload);
 categoriesRoutes(app);
 addressRoutes(app);
 productRoutes(app,upload);
+ordersRoutes(app);
 
-server.listen(3000,'192.168.1.135'||'localhost',function(){
+server.listen(3000, '0.0.0.0', function() {
     console.log('App NodeJS ' + process.pid + ' Iniciada...');
 });
 
