@@ -1,12 +1,13 @@
 version: '3'
 services:
-  backend:
-    build:
-      context: .  # Asumiendo que Dockerfile está en la raíz
+  app:
+    image: nodeimage
+    container_name: nodeserver
+    build : .
+    restart: always
     ports:
       - "3000:3000"
     environment:
       - PORT=3000
-    volumes:
-      - ./backend:/usr/src/app  # Ajusta si es necesario
+      - HOST=0.0.0.0
     command: node server.js
