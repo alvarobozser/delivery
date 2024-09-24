@@ -127,7 +127,7 @@ module.exports = {
                 });
             }
 
-            User.findById(order.id_delivery, (err, user) => {
+            /*User.findById(order.id_delivery, (err, user) => {
                 
                 if (user !== undefined && user !== null) {
 
@@ -139,7 +139,7 @@ module.exports = {
                     });
                 }
 
-            });
+            });*/
             
             return res.status(201).json({
                 success: true,

@@ -3,6 +3,8 @@ const passport = require('passport');
 
 module.exports = (app,upload)=>{
     
+    app.get('/api/users/findDeliveryMen', passport.authenticate('jwt', { session: false }),userControllers.findDeliveryMen);
+
     app.post('/api/users/create',userControllers.register);
     app.post('/api/users/createWithImage',upload.array('image',1),userControllers.registerWithImage);
     app.post('/api/users/login',userControllers.login);
