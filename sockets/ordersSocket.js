@@ -12,6 +12,13 @@ module.exports = (io)=>{
 
         });
 
+        socket.on('delivered',(data)=>{
+            
+            console.log('DELIVERY EMITIO :',data);
+            namespace.emit(`delivered/${data.id_order}`, {id_order:data.id_order});
+
+        });
+
         socket.on('disconnect',(data)=>{
             console.log('Usuario desconectado de Socket');
         });

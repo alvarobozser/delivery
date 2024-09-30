@@ -10,6 +10,7 @@ const multer = require('multer');
 const io= require('socket.io')(server);
 
 
+
 /**
  * Sockets
  * 
@@ -61,15 +62,15 @@ addressRoutes(app);
 productRoutes(app,upload);
 ordersRoutes(app);
 
-/*Produccion*/
+/*Produccion
 server.listen(3000, '0.0.0.0', function() {
     console.log('App NodeJS ' + process.pid + ' Iniciada...');
-});
+});*/
 
-/*Local
+/*Local*/
 server.listen(3000, '192.168.1.129', function() {
     console.log('App NodeJS ' + process.pid + ' Iniciada...');
-});*/
+});
 
 
 app.get('/',(req,res)=>{
