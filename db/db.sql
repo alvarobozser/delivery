@@ -3,6 +3,7 @@ CREATE TABLE users(
     email VARCHAR(180) NOT NULL UNIQUE,
     name VARCHAR(90) NOT NULL,
     lastname VARCHAR(90) NOT NULL,
+    notificacion_token VARCHAR(255),
     phone VARCHAR(90) NOT NULL UNIQUE,
     image VARCHAR(255) NULL,
     password VARCHAR(90) NOT NULL,
@@ -130,3 +131,5 @@ CREATE TABLE order_has_products(
     FOREIGN KEY(id_order) REFERENCES orders(id) ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY(id_product) REFERENCES products(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+

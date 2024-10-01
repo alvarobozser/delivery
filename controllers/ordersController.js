@@ -1,7 +1,7 @@
 const Order = require('../models/order');
 const OrderHasProducts = require('../models/order_has_products');
 const User = require('../models/users');
-//const PushNotificationsController = require('../controllers/pushNotificationsController');
+const { sendNotification, sendNotificationMultiples } = require('../controllers/pushNotificationsController');
 
 module.exports = {
 
@@ -126,20 +126,42 @@ module.exports = {
                     error: err
                 });
             }
+            /*Este seria igual pero multiple
+            User.findAdmins((err, users) => {
+                
+                if (users !== undefined && users !== null) {
 
-            /*User.findById(order.id_delivery, (err, user) => {
+                    if(users.lenght>0){
+                        let tokens=[]
+                        users.forEach(element => {
+                            tokens.push(element.notification_token);
+                        });
+                    }
+
+                    console.log('NOTIFICATION TOKEN', user.notification_token);
+                    sendNotificationMultiples(tokens, {
+                        title: 'Compra Realizado',
+                        body: 'Se ha realizado una compra',
+                        id_notification: '2'
+                    });
+                }
+
+            });*/
+
+
+            User.findById(order.id_delivery, (err, user) => {
                 
                 if (user !== undefined && user !== null) {
 
                     console.log('NOTIFICATION TOKEN', user.notification_token);
-                    PushNotificationsController.sendNotification(user.notification_token, {
+                    sendNotification(user.notification_token, {
                         title: 'PEDIDO ASIGNADO',
                         body: 'Te han asignado un pedido para entregar',
                         id_notification: '1'
                     });
                 }
 
-            });*/
+            });
             
             return res.status(201).json({
                 success: true,

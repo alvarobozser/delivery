@@ -12,5 +12,6 @@ module.exports = (app,upload)=>{
     //Auth JWT
     app.put('/api/users/update',passport.authenticate('jwt',{session:false}),upload.array('image',1),userControllers.updateWithImage);
     app.put('/api/users/updateWithOutImage',passport.authenticate('jwt',{session:false}),userControllers.updateWithOutImage);
+    app.put('/api/users/updateNotificationToken', passport.authenticate('jwt', { session: false }), userControllers.updateNotificationToken);
 
 }
