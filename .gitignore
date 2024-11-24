@@ -3,5 +3,4 @@ node_modules/
 config/
 dist/
 coverage/
-npm-debug.log*
-config/
+npm-debug.log
