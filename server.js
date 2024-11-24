@@ -68,7 +68,7 @@ server.listen(3000, '0.0.0.0', function() {
 });*/
 
 /*Local*/
-server.listen(3000, '192.168.1.131', function() {
+server.listen(3000, '192.168.1.132', function() {
     console.log('App NodeJS ' + process.pid + ' Iniciada...');
 });
 
