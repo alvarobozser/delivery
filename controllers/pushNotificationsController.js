@@ -3,7 +3,7 @@ const admin = require('firebase-admin');
 
 // Inicializa la aplicación con las credenciales de la cuenta de servicio
 admin.initializeApp({
-    credential: admin.credential.cert(require('../deliveryKeysPush.json')), // Cambia la ruta a tu archivo JSON
+    credential: admin.credential.cert(require('../config/deliveryKeysPush.json')), // Cambia la ruta a tu archivo JSON
 });
 
 // Función para enviar notificaciones
