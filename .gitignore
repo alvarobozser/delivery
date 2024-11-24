@@ -3,3 +3,7 @@ node_modules/
 dist/
 coverage/
 npm-debug.log*
+config.js
+env.js
+keys.js
+passport.js
