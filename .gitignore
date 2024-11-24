@@ -4,3 +4,4 @@ config/
 dist/
 coverage/
 npm-debug.log*
+config/
